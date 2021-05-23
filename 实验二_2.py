@@ -44,10 +44,10 @@ if __name__ == "__main__":
     x_test = x_test.reshape((-1, 28, 28, 1))
 
     HP_DROPOUT = hp.HParam('dropout', hp.RealInterval(0.1, 0.2))
-    HP_OPTIMIZER = hp.HParam('optimizer', hp.Discrete(['adam', 'sgd','Adagrad']))
-    HP_BATCH_SIZE = hp.HParam('batch_size', hp.Discrete([50, 100]))
-    HP_EPOCHS = hp.HParam('epochs', hp.Discrete([10,30,50]))
-    HP_VALI_SPLIT = hp.HParam('validation_split', hp.Discrete([0.1,0.2]))
+    HP_OPTIMIZER = hp.HParam('optimizer', hp.Discrete(['adam','Adagrad']))
+    HP_BATCH_SIZE = hp.HParam('batch_size', hp.Discrete([50,100]))
+    HP_EPOCHS = hp.HParam('epochs', hp.Discrete([50,100]))
+    HP_VALI_SPLIT = hp.HParam('validation_split', hp.Discrete([0.1]))
     METRIC_ACCURACY = 'accuracy'
 
     # HP_DROPOUT = hp.HParam('dropout', hp.RealInterval(0.1,0.2))

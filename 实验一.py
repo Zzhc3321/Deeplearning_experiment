@@ -28,7 +28,6 @@ gpus = tf.config.experimental.list_physical_devices(device_type='GPU')
 for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
-
 page_accurcy = Page(layout=Page.SimplePageLayout)
 page_loss = Page(layout=Page.SimplePageLayout)
 
@@ -108,7 +107,6 @@ for op in optimizers:
                         best_data[3] = history
                         best_p[3] = chart_name
 
-
 for i in range(4):
     xaxis_ = [i for i in range(len(best_data[i].history[n[i]]))]
     page = Page(layout=Page.SimplePageLayout)
@@ -126,7 +124,6 @@ for i in range(4):
             xaxis_opts=opts.AxisOpts(type_="category", boundary_gap=False),
         )
     )
-
     line2 = (
         Line(init_opts=opts.InitOpts(page_title=best_p[i], height='600px', width='100%'))
             .add_xaxis(xaxis_)
